@@ -11,18 +11,20 @@ public class Cards {
 
     String[] getCards() {
         String[] result = new String[52];
-        int[][] deck = new int[52][2];
+        // PlayingCard[] deck = new PlayingCard[52];
+        PlayingCardDeck deck = new PlayingCardDeck();
 
         for (int suit = 0; suit < 4; suit++) {
             for (int faceValue = 0; faceValue < 13; faceValue++) {
-                deck[suit*13+faceValue] = new int[]{suit, faceValue};
+                deck.add(new PlayingCard(new Suit(suit), faceValue));
             }
         }
 
         int cardNumber = 0;
-        for (int[] card : deck) {
+        for (PlayingCard card : deck.getDeck()) {
             String faceValueName;
-            switch (card[1]){
+            int value = card.getValue();
+            switch (value){
                 case 0: faceValueName = "ace"; break;
                 case 1:
                 case 2:
@@ -32,21 +34,22 @@ public class Cards {
                 case 6:
                 case 7:
                 case 8:
-                case 9: faceValueName = Integer.toString(card[1]+1); break;
+                case 9: faceValueName = Integer.toString(value+1); break;
                 case 10: faceValueName = "jack"; break;
                 case 11: faceValueName = "queen"; break;
                 case 12: faceValueName = "king"; break;
-                default: throw new IllegalArgumentException("Something went wrong " + card[1] + "is not a valid faceValue!");
+                default: throw new IllegalArgumentException("Something went wrong " + value + "is not a valid faceValue!");
             }
 
-            String suitName;
-            switch (card[0]){
+            String suitName = card.getSuit();
+            /* int suit = card.getSuit();
+            switch (suit){
                 case 0: suitName = "clubs"; break;
                 case 1: suitName = "diamonds"; break;
                 case 2: suitName = "hearts"; break;
                 case 3: suitName = "spades"; break;
-                default: throw new IllegalArgumentException("Something went wrong " + card[0] + "is not a valid suitName!");
-            }
+                default: throw new IllegalArgumentException("Something went wrong " + suit + "is not a valid suitName!");
+            } */
 
             result[cardNumber] = faceValueName + " of " + suitName;
             cardNumber++;
@@ -54,4 +57,16 @@ public class Cards {
 
         return result;
     }
+
+    PlayingCardDeck newDeck() {
+        PlayingCardDeck deck = new PlayingCardDeck();
+        for (int i = 0; i < 3; i++){
+            for (int j = 1; j < 13; j++){
+
+            }
+        }
+        return deck;
+    }
+
+
 }

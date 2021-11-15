@@ -9,4 +9,12 @@ public class PlayingCardDeck {
     public PlayingCardDeck(){
         this.cards = new ArrayList<>();
     }
+
+    void add(PlayingCard card){
+        cards.add(card);
+    }
+
+    List<PlayingCard> getDeck(){
+        return cards;
+    }
 }

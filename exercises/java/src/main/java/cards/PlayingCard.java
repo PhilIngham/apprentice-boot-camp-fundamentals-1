@@ -8,4 +8,9 @@ public class PlayingCard {
         this.suit = suit;
         this.faceValue = faceValue;
     }
+
+    String getSuit() { return suit.getSuit(); }
+
+    int getValue() { return faceValue; }
+
 }
