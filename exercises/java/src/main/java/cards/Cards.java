@@ -58,7 +58,7 @@ public class Cards {
         return result;
     }
 
-    PlayingCardDeck newDeck() {
+    /* PlayingCardDeck newDeck() {
         PlayingCardDeck deck = new PlayingCardDeck();
         for (int i = 0; i < 3; i++){
             for (int j = 1; j < 13; j++){
@@ -66,7 +66,7 @@ public class Cards {
             }
         }
         return deck;
-    }
+    } */
 
 
 }
