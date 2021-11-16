@@ -14,11 +14,7 @@ public class Cards {
         // PlayingCard[] deck = new PlayingCard[52];
         PlayingCardDeck deck = new PlayingCardDeck();
 
-        for (int suit = 0; suit < 4; suit++) {
-            for (int faceValue = 0; faceValue < 13; faceValue++) {
-                deck.add(new PlayingCard(new Suit(suit), faceValue));
-            }
-        }
+        deck.makeDeck();
 
         int cardNumber = 0;
         for (PlayingCard card : deck.getDeck()) {
@@ -42,14 +38,6 @@ public class Cards {
             }
 
             String suitName = card.getSuit();
-            /* int suit = card.getSuit();
-            switch (suit){
-                case 0: suitName = "clubs"; break;
-                case 1: suitName = "diamonds"; break;
-                case 2: suitName = "hearts"; break;
-                case 3: suitName = "spades"; break;
-                default: throw new IllegalArgumentException("Something went wrong " + suit + "is not a valid suitName!");
-            } */
 
             result[cardNumber] = faceValueName + " of " + suitName;
             cardNumber++;
