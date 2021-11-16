@@ -8,6 +8,11 @@ public class PlayingCardDeck {
 
     public PlayingCardDeck(){
         this.cards = new ArrayList<>();
+        for (int suit = 0; suit < 4; suit++) {
+            for (int faceValue = 0; faceValue < 13; faceValue++) {
+                cards.add(new PlayingCard(new Suit(suit), faceValue));
+            }
+        }
     }
 
     void add(PlayingCard card){
@@ -16,13 +21,5 @@ public class PlayingCardDeck {
 
     List<PlayingCard> getDeck(){
         return cards;
-    }
-
-    void makeDeck(){
-        for (int suit = 0; suit < 4; suit++) {
-            for (int faceValue = 0; faceValue < 13; faceValue++) {
-                cards.add(new PlayingCard(new Suit(suit), faceValue));
-            }
-        }
     }
 }

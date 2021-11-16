@@ -1,8 +1,5 @@
 package cards;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Suit {
     private final String suit;
 

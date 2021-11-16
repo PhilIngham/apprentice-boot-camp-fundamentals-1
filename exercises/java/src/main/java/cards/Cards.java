@@ -11,10 +11,7 @@ public class Cards {
 
     String[] getCards() {
         String[] result = new String[52];
-        // PlayingCard[] deck = new PlayingCard[52];
         PlayingCardDeck deck = new PlayingCardDeck();
-
-        deck.makeDeck();
 
         int cardNumber = 0;
         for (PlayingCard card : deck.getDeck()) {
@@ -45,16 +42,6 @@ public class Cards {
 
         return result;
     }
-
-    /* PlayingCardDeck newDeck() {
-        PlayingCardDeck deck = new PlayingCardDeck();
-        for (int i = 0; i < 3; i++){
-            for (int j = 1; j < 13; j++){
-
-            }
-        }
-        return deck;
-    } */
 
 
 }
