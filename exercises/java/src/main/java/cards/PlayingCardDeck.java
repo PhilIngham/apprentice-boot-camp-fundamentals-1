@@ -1,9 +1,10 @@
 package cards;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-public class PlayingCardDeck {
+public class PlayingCardDeck implements Deck{
     private final List<PlayingCard> cards;
 
     public PlayingCardDeck(){
@@ -15,11 +16,23 @@ public class PlayingCardDeck {
         }
     }
 
-    void add(PlayingCard card){
-        cards.add(card);
-    }
-
     List<PlayingCard> getDeck(){
         return cards;
+    }
+
+    public String[] getCards(){
+        String[] returnCards = new String[cards.size()];
+        for(int i = 0; i < cards.size(); i++) {
+            returnCards[i] = cards.get(i).getFaceValue();
+        }
+        return returnCards;
+    }
+
+    public Card deal(){
+        return cards.remove(0);
+    }
+
+    public void shuffle() {
+        Collections.shuffle(cards);
     }
 }

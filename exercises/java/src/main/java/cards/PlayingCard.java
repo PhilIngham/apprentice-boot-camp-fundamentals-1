@@ -1,6 +1,6 @@
 package cards;
 
-public class PlayingCard {
+public class PlayingCard implements Card {
     private final Suit suit;
     private final int faceValue;
 
@@ -13,4 +13,13 @@ public class PlayingCard {
 
     int getValue() { return faceValue; }
 
+    public String getFaceValue(){
+        return String.valueOf(faceValue);
+    }
+
+    public boolean snap(Card otherCard){
+        return otherCard != null && this.getFaceValue().equals(otherCard.getFaceValue());
+    }
+
+    public String toString(){ return getFaceValue(); }
 }

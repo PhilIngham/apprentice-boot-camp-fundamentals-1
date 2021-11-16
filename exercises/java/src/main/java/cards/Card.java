@@ -1,2 +1,7 @@
-package cards;public interface Card {
+package cards;
+
+public interface Card {
+    boolean snap(Card otherCard);
+
+    String getFaceValue();
 }

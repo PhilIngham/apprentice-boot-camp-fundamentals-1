@@ -1,2 +1,10 @@
-package cards;public interface Deck {
+package cards;
+
+public interface Deck {
+
+    String[] getCards();
+
+    Card deal();
+
+    void shuffle();
 }
