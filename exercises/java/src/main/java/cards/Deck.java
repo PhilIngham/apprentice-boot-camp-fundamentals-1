@@ -1,10 +1,10 @@
 package cards;
 
-public interface Deck {
+public abstract class Deck {
 
-    String[] getCards();
+    public abstract String[] getCards();
 
-    Card deal();
+    public abstract Card deal();
 
-    void shuffle();
+    public abstract void shuffle();
 }

@@ -4,12 +4,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-class AnimalDeck implements Deck{
+class AnimalDeck extends Deck {
 
     private final List<AnimalCard> cards;
 
     AnimalDeck() {
         cards = new ArrayList<>();
+
         for (Animal animal : Animal.values()) {
             cards.add(new AnimalCard(animal));
             cards.add(new AnimalCard(animal));

@@ -5,15 +5,15 @@ import java.util.Scanner;
 class Snap {
     private int player1Score;
     private int player2Score;
-    private final Deck deck;
+    private final MixedDeck deck;
 
-    Snap(Deck deck) {
+    Snap(MixedDeck deck) {
         this.deck = deck;
         deck.shuffle();
     }
 
     public static void main(String[] args) {
-        Snap snap = new Snap(new PlayingCardDeck());
+        Snap snap = new Snap(new MixedDeck());
         snap.play();
     }
 

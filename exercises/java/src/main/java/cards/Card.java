@@ -1,7 +1,7 @@
 package cards;
 
-public interface Card {
-    boolean snap(Card otherCard);
+public abstract class Card{
+    public abstract boolean snap(Card otherCard);
 
-    String getFaceValue();
+    public abstract String getFaceValue();
 }
